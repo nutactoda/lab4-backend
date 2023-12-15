@@ -1,0 +1,62 @@
+<html>
+    <head>
+     <title> Карточка книги </title>
+        {% macro render_table(table_name, relation) %}
+            <p>
+                <b>{{table_name}} </b>
+            </p>
+
+            <!-- количество строк в таблице -->
+            {% set n = len(relation) %}
+
+            <table>
+                <!-- формируем заголовок таблицы (имена столбцов) -->
+                <tr>
+                    {% for name in relation.dtypes.index %}
+                    <th>{{name}}</th>
+                    {% endfor %}
+                </tr>
+
+                <tbody>
+                    <!-- для всех строк таблицы -->
+                    {% for i in range(n) %}
+                        <tr>
+                            <!-- выводим значение каждого столбца -->
+                            {% for name in relation.dtypes.index %}
+                                <td> {{ relation.loc[i, name] }} </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endmacro %}
+        {% macro render_select(select_name, select_value) %}
+            {{select_name}}:
+                <!-- Создаем поле со списком -->
+                <select name={{select_name}}>
+                    {% set n = len(combo_box) %}
+                    {% for i in range(n) %}
+                        {% set id_r = combo_box.loc[i, select_value] %}
+                        {% if id_r == select_value %}
+                            <option selected value={{id_r}}>
+                        {% else %}
+                            <option value={{id_r}}>
+                        {% endif %}
+                        {{ combo_box.loc[i, select_value] }}
+                        </option>
+                    {% endfor %}
+                </select>
+        {% endmacro %}
+    </head>
+    <body>
+        <p>
+            <form>
+                {{ render_select("Количество книг", "amount") }}
+                {{ render_select("Цена", "price") }}
+                <input type="submit" value="Найти">
+            </form>
+        </p>
+        <!-- вызвать макрос render_table с параметрами "Карточка" и DataFrame book_reader -->
+        {{ render_table("Карточка", book) }}
+    </body>
+</html>

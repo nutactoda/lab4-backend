@@ -1,0 +1,180 @@
+﻿<html>
+    <head>
+     <title> Карточка книги </title>
+        
+        
+    </head>
+    <body>
+        <p>
+            <form>
+                
+            Количество книг:
+                <!-- Создаем поле со списком -->
+                <select name=Количество книг>
+                    
+                    
+                        
+                        
+                            <option value=3>
+                        
+                        3
+                        </option>
+                    
+                        
+                        
+                            <option value=5>
+                        
+                        5
+                        </option>
+                    
+                        
+                        
+                            <option value=10>
+                        
+                        10
+                        </option>
+                    
+                        
+                        
+                            <option value=3>
+                        
+                        3
+                        </option>
+                    
+                        
+                        
+                            <option value=10>
+                        
+                        10
+                        </option>
+                    
+                        
+                        
+                            <option value=15>
+                        
+                        15
+                        </option>
+                    
+                        
+                        
+                            <option value=6>
+                        
+                        6
+                        </option>
+                    
+                        
+                        
+                            <option value=2>
+                        
+                        2
+                        </option>
+                    
+                </select>
+        
+                
+            Цена:
+                <!-- Создаем поле со списком -->
+                <select name=Цена>
+                    
+                    
+                        
+                        
+                            <option value=670.99>
+                        
+                        670.99
+                        </option>
+                    
+                        
+                        
+                            <option value=540.5>
+                        
+                        540.5
+                        </option>
+                    
+                        
+                        
+                            <option value=460.0>
+                        
+                        460.0
+                        </option>
+                    
+                        
+                        
+                            <option value=799.01>
+                        
+                        799.01
+                        </option>
+                    
+                        
+                        
+                            <option value=480.5>
+                        
+                        480.5
+                        </option>
+                    
+                        
+                        
+                            <option value=650.0>
+                        
+                        650.0
+                        </option>
+                    
+                        
+                        
+                            <option value=570.2>
+                        
+                        570.2
+                        </option>
+                    
+                        
+                        
+                            <option value=518.99>
+                        
+                        518.99
+                        </option>
+                    
+                </select>
+        
+                <input type="submit" value="Найти">
+            </form>
+        </p>
+        <!-- вызвать макрос render_table с параметрами "Карточка" и DataFrame book_reader -->
+        
+            <p>
+                <b>Карточка </b>
+            </p>
+
+            <!-- количество строк в таблице -->
+            
+
+            <table>
+                <!-- формируем заголовок таблицы (имена столбцов) -->
+                <tr>
+                    
+                    <th>Название</th>
+                    
+                    <th>Автор</th>
+                    
+                    <th>Жанр</th>
+                    
+                </tr>
+
+                <tbody>
+                    <!-- для всех строк таблицы -->
+                    
+                        <tr>
+                            <!-- выводим значение каждого столбца -->
+                            
+                                <td> Мастер и Маргарита </td>
+                            
+                                <td> Булгаков М.А. </td>
+                            
+                                <td> Роман </td>
+                            
+                        </tr>
+                    
+                </tbody>
+            </table>
+        
+    </body>
+</html>
